@@ -1,0 +1,53 @@
+<?php 
+    if(isset($success)):
+?>
+<div class="alert alert-success" role="alert"><?php echo $success ?></div>
+<?php endif; ?>
+
+<?php echo $this->form()->openTag($form); ?>
+
+<div class="panel panel-primary col-md-8 col-md-offset-2">
+    <div class="panel-heading">
+        <h3 class="panel-title">Tenha chances de ganhar um Iphone todo mês</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <?php echo $this->formRow($form->get('user_name')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?php echo $this->formRow($form->get('user_email')); ?>      
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <?php echo $this->formRow($form->get('user_birthday')); ?> 
+            </div>
+            <div class="col-md-4">
+                <?php echo $this->formRow($form->get('user_gender')); ?>      
+            </div>
+            <div class="col-md-4">
+
+                <br>
+                <button type="submit" name='user_submit' id='user_submit' class="btn btn-success">cadastrar agora</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php $this->form()->closeTag(); ?>
+
+
+<script type="text/javascript">
+    $("#user_birthday").datetimepicker(
+            {
+                format: 'dd-mm-yyyy',
+                autoclose: true,
+                startView: 4,
+                minView: 2
+            });
+</script>
+
